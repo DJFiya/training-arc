@@ -2,6 +2,7 @@
 import pytest
 
 from next_greatest_element_I import NextGreaterElementClass
+from keyboard_row import KeyboardRow
 
 @pytest.mark.parametrize(
     "nums1, nums2, expected",
@@ -17,4 +18,20 @@ from next_greatest_element_I import NextGreaterElementClass
 async def test_next_greater_element(nums1, nums2, expected):
     solution = NextGreaterElementClass()
     result = solution.nextGreaterElement(nums1, nums2)
+    assert result == expected, f"Expected {expected}, but got {result}"
+
+@pytest.mark.parametrize(
+    "words, expected",
+    [
+        (["Hello", "Alaska", "Dad", "Peace"], ["Alaska", "Dad"]),
+        (["omg", "hello", "world"], []),
+        (["qwerty", "asdfghjkl", "zxcvbnm"], ["qwerty", "asdfghjkl", "zxcvbnm"]),
+        (["abc", "defg", "hij"], []),
+        ([], []),
+    ]
+)
+@pytest.mark.asyncio
+async def test_keyboard_row(words, expected):
+    solution = KeyboardRow()
+    result = solution.findWords(words)
     assert result == expected, f"Expected {expected}, but got {result}"

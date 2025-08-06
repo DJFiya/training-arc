@@ -1,6 +1,6 @@
 # Python DSA Practice
 
-This folder contains all the Data Structures and Algorithms (DSA) problems that I am practicing using Python.
+This folder contains all the Data Structures and Algorithms (DSA) problems that I am practicing using Python. Ranging from problems I solve with ease, to problems that rack my brain. 
 
 ## Setup Instructions
 
@@ -24,10 +24,10 @@ Now you can test my DSA problems! I have set up automated tests, but if you want
 
 Anyways if you do want to test, then:
 
-- Use a non-PowerShell terminal (like Git Bash) to run the test script.
+- Use a non-PowerShell terminal (like Git Bash) to run the test script. Make sure to cd into the right directory.
 - Make sure to activate your virtual environment using `source`:
   ```bash
-  source .venv/bin/activate
+  source .venv/Scripts/activate
   ```
 - Then run the test script:
   ```bash
