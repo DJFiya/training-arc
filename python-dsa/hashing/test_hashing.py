@@ -5,6 +5,7 @@ from next_greatest_element_I import NextGreaterElementClass
 from keyboard_row import KeyboardRow
 from distribute_candies import CandyDistribution
 from longest_harmonius_subsequence import LHS
+from minimum_index_sum_of_two_lists import MinimumIndexSumOfTwoLists
 
 @pytest.mark.parametrize(
     "nums1, nums2, expected",
@@ -69,3 +70,21 @@ async def test_longest_harmonious_subsequence(nums, expected):
     solution = LHS()
     result = solution.findLHS(nums)
     assert result == expected, f"Expected {expected}, but got {result}"
+
+@pytest.mark.parametrize(
+    "list1, list2, expected",
+    [
+        (["Shogun", "Tapioca Express", "Burger King", "KFC"],
+         ["Piatti", "The Grill at Torrey Pines", "Hungry Hunter Steakhouse", "Shogun"],
+         ["Shogun"]),
+        (["Shogun", "KFC"], ["KFC", "Shogun"], ["KFC", "Shogun"]),
+        (["A", "B", "C"], ["D", "E", "F"], []),
+        (["A", "B", "C"], ["B", "A", "C"], ["A", "B"]),
+        (["A"], ["A"], ["A"]),
+    ]
+)
+@pytest.mark.asyncio
+async def test_minimum_index_sum_of_two_lists(list1, list2, expected):
+    solution = MinimumIndexSumOfTwoLists()
+    result = solution.findRestaurant(list1, list2)
+    assert set(result) == set(expected), f"Expected {expected}, but got {result}"
